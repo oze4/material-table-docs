@@ -1,8 +1,8 @@
 module.exports = {
   title: 'Material Table',
   tagline: 'React data table component that based on Material-UI. This is a maintained fork of mbrn/material-table',
-  url: 'https://material-table.com',
-  baseUrl: '/material-table-docs/',
+  url: 'https://oze4.github.io/material-table-docs',
+  baseUrl: '/',
   favicon: '/ico/favico.ico',
   organizationName: 'oze4', // Usually your GitHub org/user name.
   projectName: 'material-table-docs', // Usually your repo name.
