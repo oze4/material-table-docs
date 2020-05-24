@@ -8,7 +8,7 @@
     "swizzle": "docusaurus swizzle",
     "pre:deploy": "node build.js",
     "docusaurus:deploy": "docusaurus deploy",
-    "deploy": "yarn pre:deploy"
+    "deploy": "cross-env GIT_USER=oze4 docusaurus deploy"
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-alpha.55",
