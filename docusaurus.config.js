@@ -86,7 +86,7 @@ module.exports = {
           homePageId: 'docs/getting-started/installation',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/oze4/material-table-core-website/',
+            'https://github.com/oze4/material-table-docs/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
