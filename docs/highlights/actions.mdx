@@ -5,15 +5,33 @@ title: Actions
 
 import LiveCodeBlock from '../../components/LiveCodeBlock.jsx';
 import MaterialTable from 'material-table';
+import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { Button } from '@material-ui/core';
 
+<Button 
+  style={{ marginBottom: '5%' }}
+  color="primary"
+  variant="contained"
+  component={Link} 
+  to={useBaseUrl('docs/api/props/mt_prop_actions')} 
+  disableElevation
+>
+  API Docs
+</Button>
+
+:::info Summary
 You can add buttons to rows or toolbar by using actions prop. Actions prop takes array of actions.
 
-Essentially, Actions are buttons that are located either within the toolbar (to perform table-wide tasks, like export to .csv), or as the first column in each row (to perform row tasks, like edit data in a row).
+Actions are buttons that are located either within the toolbar (to perform table-wide tasks, like export to .csv), or as the first column in each row (to perform row tasks, like edit data in a row).
 
-By default, Actions will be rendered on each row.
+Actions are rendered to either the Toolbar, or to the start of each Row. 
 
-:::info Something to remember
-Actions are rendered to either the Toolbar, or to the start of each Row
+By default, Actions will be rendered to the start of each Row.
+:::
+
+:::warning Trying to use conditional Actions with Selection?
+See [here](#conditional-action--selection) for more info
 :::
 
 ## Usage
@@ -69,15 +87,262 @@ function SimpleAction() {
 }
 ```
 
-## Caveats
-
-### Using with options.selection
-
-If you want to use an Action at the start of each Row, as well as use the [`options.selection`](/docs/api/props/mt_prop_options), you'll need to specify the location of the Action:
+### Conditional Action
 
 ```jsx live
-// Find code that demos this - I have it somewhere
-function Foo() {
-  return <p>Foo</p>
+function Demo() {
+  const rando = (max) => Math.floor(Math.random() * max);
+  const words = ['Paper', 'Rock', 'Scissors'];
+  const data = [];
+
+  for (let i = 0; i < 100; i++) {
+    data.push({
+      id: rando(300),
+      name: words[i % words.length],
+    });
+  }
+
+  const columns = [
+    { title: 'Id', field: 'id' },
+    { title: 'Name', field: 'name' },
+  ];
+
+  const actions = [
+    (rowData) => ({
+      icon: () => <RemoveCircleIcon />,
+      tooltip: 'I am a tooltip',
+      onClick: (event, rowData) => alert(JSON.stringify(rowData, null, 2)),
+      disabled: rowData.id < 150,
+      position: 'row',
+    }),
+  ];
+
+  return <MaterialTable actions={actions} data={data} columns={columns} />;
+}
+```
+
+### Conditional Action + Selection
+
+Notice how we are conditionally disabling certain actions here, all while using selection
+
+```jsx live
+function ConditionalActionSelection() {
+  const rando = (max) => Math.floor(Math.random() * max);
+  const words = ['Paper', 'Rock', 'Scissors'];
+  const data = [];
+
+  for (let i = 0; i < 100; i++) {
+    data.push({
+      id: rando(300),
+      name: words[i % words.length],
+    });
+  }
+
+  const columns = [
+    { title: 'Id', field: 'id' },
+    { title: 'Name', field: 'name' },
+  ];
+
+  const actions = [
+    {
+      name: 'remove', // Added custom name property so we know which action to check for
+      icon: () => <RemoveCircleIcon />,
+      tooltip: <h1>I am a tooltip</h1>,
+      onClick: (event, rowData) => alert(JSON.stringify(rowData, null, 2)),
+      disabled: false, // Set disabled to false by default for all actions
+      position: 'row',
+    },
+    {
+      name: 'account',
+      icon: () => <AccountCircleIcon />,
+      tooltip: <h1>I am a tooltip</h1>,
+      onClick: (event, rowData) => alert(JSON.stringify(rowData, null, 2)),
+      disabled: false,
+      position: 'row',
+    },
+  ];
+
+  return (
+    <MaterialTable
+      actions={actions}
+      title="Conditional Action + Selection"
+      data={data}
+      columns={columns}
+      components={{
+        Row: (props) => {
+          const propsCopy = { ...props };
+          propsCopy.actions.find((a) => a.name === 'remove').disabled =
+            propsCopy.data.id < 100;
+          propsCopy.actions.find((a) => a.name === 'account').disabled =
+            propsCopy.data.name !== 'Paper';
+          return <MTableBodyRow {...propsCopy} />;
+        },
+      }}
+      options={{
+        selection: true,
+      }}
+    />
+  );
+}
+```
+
+### Action + Selection
+
+```jsx live
+function Demo() {
+  const rando = (max) => Math.floor(Math.random() * max);
+  const words = ['Paper', 'Rock', 'Scissors'];
+  const data = [];
+
+  for (let i = 0; i < 100; i++) {
+    data.push({
+      id: rando(300),
+      name: words[i % words.length],
+    });
+  }
+
+  const columns = [
+    { title: 'Id', field: 'id' },
+    { title: 'Name', field: 'name' },
+  ];
+
+  const actions = [
+    {
+      name: 'remove',
+      icon: () => <RemoveCircleIcon />,
+      tooltip: 'I am a tooltip',
+      onClick: (event, rowData) => alert(JSON.stringify(rowData, null, 2)),
+      disabled: false,
+      position: 'row',
+    },
+  ];
+
+  return (
+    <MaterialTable
+      actions={actions}
+      title="Action + Selection"
+      data={data}
+      columns={columns}
+      options={{
+        selection: true,
+      }}
+    />
+  );
+}
+```
+
+### Multiple
+
+```jsx live
+function Demo() {
+  const rando = (max) => Math.floor(Math.random() * max);
+  const words = ['Paper', 'Rock', 'Scissors'];
+  const data = [];
+
+  for (let i = 0; i < 100; i++) {
+    data.push({
+      id: rando(300),
+      name: words[i % words.length],
+    });
+  }
+
+  const columns = [
+    { title: 'Id', field: 'id' },
+    { title: 'Name', field: 'name' },
+  ];
+
+  const actions = [
+    {
+      icon: () => <RemoveCircleIcon />,
+      tooltip: 'I am a tooltip',
+      onClick: (event, rowData) => alert(JSON.stringify(rowData, null, 2)),
+      disabled: false,
+      position: 'row',
+    },
+    {
+      icon: () => <AccountCircleIcon />,
+      tooltip: 'I am a tooltip',
+      onClick: (event, rowData) => alert(JSON.stringify(rowData, null, 2)),
+      disabled: false,
+      position: 'row',
+    },
+  ];
+
+  return <MaterialTable actions={actions} title="Multiple Actions" data={data} columns={columns} />;
+}
+```
+
+### Positioning
+
+Set the Actions column position by using [`options.actionsColumnIndex`](/material-table-docs/docs/api/props/mt_prop_options)
+
+```jsx live
+function PositioningDemo() {
+  const data = [
+    { id: 0, name: 'Joe' },
+    { id: 1, name: 'Mary' },
+  ];
+  const columns = [
+    { field: 'id', title: 'Id' },
+    { field: 'name', title: 'Name' },
+  ];
+  return (
+    <MaterialTable
+      options={{
+        actionsColumnIndex: -1
+      }}
+      data={data}
+      columns={columns}
+      title="Positioning"
+      actions={[
+        {
+          icon: 'save',
+          tooltip: 'Save User',
+          onClick: (event, rowData) => {
+            alert(JSON.stringify(rowData, null, 2));
+            console.log({ event, rowData });
+          },
+        },
+      ]}
+    />
+  );
+}
+```
+
+### Free Action
+
+Don't want your Action rendered on each Row? Use `isFreeAction` - notice the icon is now to the right of the search bar
+
+```jsx live
+function IsFreeAction() {
+  const data = [
+    { id: 0, name: 'Joe' },
+    { id: 1, name: 'Mary' },
+  ];
+  const columns = [
+    { field: 'id', title: 'Id' },
+    { field: 'name', title: 'Name' },
+  ];
+  return (
+    <MaterialTable
+      options={{
+        actionsColumnIndex: -1
+      }}
+      data={data}
+      columns={columns}
+      title="Is Free Action"
+      actions={[
+        {
+          icon: 'save',
+          tooltip: 'Save User',
+          isFreeAction: true,
+          onClick: (event, rowData) => {
+            alert(JSON.stringify(rowData, null, 2));
+            console.log({ event, rowData });
+          },
+        },
+      ]}
+    />
+  );
 }
 ```

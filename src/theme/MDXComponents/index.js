@@ -10,16 +10,20 @@ import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
 
+import MaterialTable, { MTableBodyRow } from "material-table";
+
+import { 
+  RemoveCircleOutlineOutlined as RemoveCircleIcon,
+  AccountCircleOutlined as AccountCircleIcon
+} from '@material-ui/icons';
+
 import styles from './styles.module.css';
 
-//-------------------------------------------------------/
-////// Import the component you need in scope
-import MaterialTable from 'material-table';
-
-//-------------------------------------------------------/
-////// Object with components I need in scope
 const SCOPE = {
   MaterialTable,
+  MTableBodyRow,
+  RemoveCircleIcon,
+  AccountCircleIcon,
 }
 
 export default {
