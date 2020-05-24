@@ -1,0 +1,83 @@
+---
+id: highlight_actions
+title: Actions
+---
+
+import LiveCodeBlock from '../../components/LiveCodeBlock.jsx';
+import MaterialTable from 'material-table';
+
+You can add buttons to rows or toolbar by using actions prop. Actions prop takes array of actions.
+
+Essentially, Actions are buttons that are located either within the toolbar (to perform table-wide tasks, like export to .csv), or as the first column in each row (to perform row tasks, like edit data in a row).
+
+By default, Actions will be rendered on each row.
+
+:::info Something to remember
+Actions are rendered to either the Toolbar, or to the start of each Row
+:::
+
+## Usage
+
+```jsx
+<MaterialTable
+  data={data}
+  columns={columns}
+  actions={[
+    {
+      icon: 'save',
+      tooltip: 'Save User',
+      onClick: (event, rowData) => {
+        // Perform save action
+        console.log({ event, rowData });
+      },
+    },
+  ]}
+/>
+```
+
+## Demos
+
+### Simple
+
+```jsx live
+function SimpleAction() {
+  const data = [
+    { id: 0, name: 'Joe' },
+    { id: 1, name: 'Mary' },
+  ];
+  const columns = [
+    { field: 'id', title: 'Id' },
+    { field: 'name', title: 'Name' },
+  ];
+  return (
+    <MaterialTable
+      data={data}
+      columns={columns}
+      title="Simple Action"
+      actions={[
+        {
+          icon: 'save',
+          tooltip: 'Save User',
+          onClick: (event, rowData) => {
+            alert(JSON.stringify(rowData, null,));
+            console.log({ event, rowData });
+          },
+        },
+      ]}
+    />
+  );
+}
+```
+
+## Caveats
+
+### Using with options.selection
+
+If you want to use an Action at the start of each Row, as well as use the [`options.selection`](/docs/api/props/mt_prop_options), you'll need to specify the location of the Action:
+
+```jsx live
+// Find code that demos this - I have it somewhere
+function Foo() {
+  return <p>Foo</p>
+}
+```
