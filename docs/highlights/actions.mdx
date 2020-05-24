@@ -59,7 +59,7 @@ function SimpleAction() {
           icon: 'save',
           tooltip: 'Save User',
           onClick: (event, rowData) => {
-            alert(JSON.stringify(rowData, null,));
+            alert(JSON.stringify(rowData, null, 2));
             console.log({ event, rowData });
           },
         },
