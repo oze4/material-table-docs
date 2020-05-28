@@ -21,7 +21,7 @@ const highlights = [
 
 highlights.forEach(highlight => {
 
-  const id = 'highlight_' + highlight.toLowerCase().replace(/\s+/g, '_');
+  const id = 'feature_' + highlight.toLowerCase().replace(/\s+/g, '_');
   const sidebarPath = '"highlights/' + id + '",';
   const filepath = path.resolve(__dirname, '../docs/highlights/' + highlight.toLowerCase().replace(/\s+/g, '_') + '.md');
 

@@ -1,5 +1,5 @@
 ---
-id: highlight_grouping
+id: feature_grouping
 title: Grouping 
 ---
 

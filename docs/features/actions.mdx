@@ -1,32 +1,13 @@
 ---
-id: highlight_actions
+id: feature_actions
 title: Actions
 ---
 
 import MaterialTable from 'material-table';
-import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import { Button } from '@material-ui/core';
+import { MoreInfoLink } from './_components';
 
-<Button 
-  style={{ marginBottom: '5%' }}
-  color="primary"
-  variant="contained"
-  component={Link} 
-  to={useBaseUrl('docs/api/props/mt_prop_actions')} 
-  disableElevation
->
-  More Info
-</Button>
-
-:::note Important Info
-You can add buttons to rows or toolbar by using actions prop. Actions prop takes array of actions.
-
-Actions are buttons that are located either within the toolbar (to perform table-wide tasks, like export to .csv), or as the first column in each row (to perform row tasks, like edit data in a row).
-
-Actions are rendered to either the Toolbar, or to the start of each Row. 
-
-By default, Actions will be rendered to the start of each Row.
+:::tip More Info
+<MoreInfoLink to="docs/api/props/mt_prop_actions" title="More info on the `actions` prop can be found here" />
 :::
 
 :::info Trying to use conditional Actions with Selection?

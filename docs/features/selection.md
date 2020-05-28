@@ -1,5 +1,5 @@
 ---
-id: highlight_selection
+id: feature_selection
 title: Selection 
 ---
 

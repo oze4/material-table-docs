@@ -94,6 +94,26 @@ function Home() {
             >
               Docs
             </Link>
+            <Link
+              style={{ margin: 5 }}
+              className={classnames(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted
+              )}
+              to={useBaseUrl('docs/features/feature_actions')}
+            >
+              Features
+            </Link>
+            <Link
+              style={{ margin: 5 }}
+              className={classnames(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted
+              )}
+              to={useBaseUrl('docs/api/props/mt_prop_actions')}
+            >
+              Props
+            </Link>
           </div>
         </div>
       </header>
@@ -106,6 +126,26 @@ function Home() {
           style={{ height: featuresContainerHeight }}
         >
           <Grid item xs={12} md={6}>
+            <p>
+              <a style={{margin:'5px'}} href="https://travis-ci.org/mbrn/material-table">
+                  <img src="https://travis-ci.org/mbrn/material-table.svg?branch=master" alt="Build Status" />
+              </a>
+              <a style={{margin:'5px'}} href="https://www.npmjs.com/package/material-table">
+                <img src="https://img.shields.io/npm/v/material-table/latest.svg" alt="npm package" />
+              </a>
+              <a style={{margin:'5px'}} href="https://npmcharts.com/compare/material-table?minimal=true">
+                <img src="https://img.shields.io/npm/dt/material-table.svg?style=flat" alt="NPM Downloads" />
+              </a>
+              <a style={{margin:'5px'}} href="http://isitmaintained.com/project/mbrn/material-table" title="Average time to resolve an issue">
+                <img src="http://isitmaintained.com/badge/resolution/mbrn/material-table.svg" alt="Average time to resolve an issue" />
+              </a>
+              <a style={{margin:'5px'}} href="https://twitter.com/baranmehmet">
+                <img src="https://img.shields.io/twitter/follow/baranmehmet.svg?label=follow+baranmehmet" alt="Follow on Twitter" />
+              </a>
+              <a style={{margin:'5px'}} href="https://gitter.im/material-table/Lobby">
+                <img src="https://badges.gitter.im/gitterHQ/gitter.png" alt="Gitter chat" />
+              </a>
+            </p>
             <Highlighter code={code_} language="shell" theme={dracula} />
           </Grid>
         </Grid>

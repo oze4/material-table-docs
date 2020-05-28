@@ -1,32 +1,18 @@
 ---
-id: highlight_component_overriding
+id: feature_component_overriding
 title: Component Overriding 
 ---
 
 import MaterialTable from 'material-table';
-import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import { Button } from '@material-ui/core';
+import { MoreInfoLink } from './_components';
 
-<Button 
-  style={{ marginBottom: '5%' }}
-  color="primary"
-  variant="contained"
-  component={Link} 
-  to={useBaseUrl('docs/api/in-depth/details_component_overriding')} 
-  disableElevation
->
-  More Info
-</Button>
-
-### Important Info
-
-:::note Important Info
- - The `components` property accepts an object [with this shape](#shape-of-components-object)
-   - [More info can be found here](#table-of-components-fields)
- - Each field within the `components` object expects a function that returns a `React.Element` type
-   - We pass a [props](#link-to-more-about-the-props-object-in-callback) object to said function
+:::tip More Info
+<MoreInfoLink to="docs/api/props/mt_prop_components" title="More info on the `components` prop can be found here" />
 :::
+
+## Intro 
+
+Component overriding is a big part of Material Table.  Our API has a wide surface area - we expose a lot of our internals which opens the door to some pretty creative solutions.
 
 ## Usage 
 

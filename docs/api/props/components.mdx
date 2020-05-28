@@ -1,6 +1,6 @@
 ---
-id: details_component_overriding
-title: Component Overriding 
+id: mt_prop_components
+title: components
 ---
 
 import MaterialTable from 'material-table';
@@ -8,11 +8,16 @@ import tableIcons from '../../../components/MaterialTable/tableIcons';
 
 ## The `components` Property
 
-More on the `components` property.
+:::note <h3 style={{display:'inline-block'}} id="intro">Intro</h3>
+ - The `components` property accepts an object [with the following fields/shape](#shape)
+   - More info on each [field can be found here](#fields)
+ - Each field within the `components` object expects a function that returns a `React.Element` type
+   - We pass a [props](#link-to-more-about-the-props-object-in-callback) object to said function
+:::
 
 ### Shape
 
-:::note Optional
+:::info Optional
 These fields are all optional
 :::
 

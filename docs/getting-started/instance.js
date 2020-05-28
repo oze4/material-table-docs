@@ -18,14 +18,32 @@ const Instance = () => {
         {
           field: 'name',
           title: 'Name',
+        },
+        {
+          field: 'link',
+          title: 'Details',
           render: (rowData) => {
             return (
               <Link to={`${baseUrl}${rowData.link}mt_prop_${rowData.name}`}>
-                {rowData.name}
+                More Info
               </Link>
             );
           },
         },
+        {
+          field: 'feature',
+          title: 'Features',
+          render: (rowData) => {
+            if (rowData.feature) {
+              return (
+                <Link to={`${baseUrl}${rowData.feature}`}>
+                  Demo
+                </Link>
+              );
+            }
+            return "-";
+          },
+        }
         // { field: 'type', title: 'Type' },
         // { field: 'description', title: 'Description' },
       ]}
@@ -33,6 +51,7 @@ const Instance = () => {
         {
           name: 'actions',
           link: 'docs/api/props/',
+          feature: 'docs/features/feature_actions'
           // type: '#TODO',
           // description: '#TODO',
         },

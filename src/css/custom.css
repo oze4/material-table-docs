@@ -66,6 +66,8 @@ html[data-theme='dark'].homepage-background-styles {
   --ifm-background-color: var(--ifm-color-secondary); /* #e8eaf5 !important; */
 }
 
+html[data-theme='dark']
+
 /* Thanks docusaurus docs! */
 .header-github-link:before {
   content: '';

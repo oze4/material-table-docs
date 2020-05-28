@@ -33,6 +33,18 @@ module.exports = {
           position: 'right',
         },
         {
+          to: 'docs/features/feature_actions',
+          activeBasePath: 'docs',
+          label: 'Features',
+          position: 'right',
+        },
+        {
+          to: 'docs/api/props/mt_prop_actions',
+          activeBasePath: 'docs',
+          label: 'Props',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/oze4/material-table-docs',
           position: 'right',
           className: 'header-github-link',

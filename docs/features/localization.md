@@ -1,5 +1,5 @@
 ---
-id: highlight_localization
+id: feature_localization
 title: Localization 
 ---
 

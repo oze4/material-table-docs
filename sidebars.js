@@ -1,26 +1,26 @@
 module.exports = {
   sidebar: {
-    'Getting Started': [
+    'Material Table': [
       'getting-started/about',
       'getting-started/install',
       'getting-started/instance',
     ],
     Features: [
-      "highlights/highlight_actions",
-      "highlights/highlight_component_overriding",
-      "highlights/highlight_custom_column_rendering",
-      "highlights/highlight_detail_panel",
-      "highlights/highlight_editable",
-      "highlights/highlight_export",
-      "highlights/highlight_filtering",
-      "highlights/highlight_grouping",
-      "highlights/highlight_localization",
-      "highlights/highlight_remote_data",
-      "highlights/highlight_search",
-      "highlights/highlight_selection",
-      "highlights/highlight_sorting",
-      "highlights/highlight_styling",
-      "highlights/highlight_tree_data",
+      "features/feature_actions",
+      "features/feature_component_overriding",
+      "features/feature_custom_column_rendering",
+      "features/feature_detail_panel",
+      "features/feature_editable",
+      "features/feature_export",
+      "features/feature_filtering",
+      "features/feature_grouping",
+      "features/feature_localization",
+      "features/feature_remote_data",
+      "features/feature_search",
+      "features/feature_selection",
+      "features/feature_sorting",
+      "features/feature_styling",
+      "features/feature_tree_data",
     ],
     API: [
       {
@@ -66,9 +66,9 @@ module.exports = {
           'api/components/component_m_table_stepped-pagination',
           'api/components/component_m_table_toolbar',
         ],
-        "In Depth": [
-          "api/in-depth/details_component_overriding"
-        ],
+        // "In Depth": [
+        //   "api/in-depth/details_component_overriding"
+        // ],
       },
     ],
 
