@@ -18,6 +18,12 @@
   }
 }
 
+.featuresContainer {
+  text-align: center;
+  margin-top: 2em;
+  min-height: 300px;
+}
+
 .buttons {
   display: flex;
   align-items: center;

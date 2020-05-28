@@ -1,0 +1,138 @@
+---
+id: details_component_overriding
+title: Component Overriding 
+---
+
+## The `components` Property
+
+More on the `components` property.
+
+### Shape
+
+```jsx
+// See more HERE on the `(props)` object that gets passed
+const components = {
+  Action: (props) => <React.Element />,
+  Actions: (props) => <React.Element />,
+  Body: (props) => <React.Element />,
+  Cell: (props) => <React.Element />,
+  Container: (props) => <React.Element />,
+  EditField: (props) => <React.Element />,
+  EditRow: (props) => <React.Element />,
+  FilterRow: (props) => <React.Element />,
+  Groupbar: (props) => <React.Element />,
+  Header: (props) => <React.Element />,
+  OverlayLoading: (props) => <React.Element />,
+  Pagination: (props) => <React.Element />,
+  Row: (props) => <React.Element />,
+  Toolbar: (props) => <React.Element />,
+}
+```
+
+### Fields
+
+<div>
+    <MaterialTable
+    title={<small>Components Property - Fields</small>}
+    options={{
+        maxBodyHeight: 400,
+        pageSize: 14
+    }}
+    columns={[
+        { field: 'field', title: 'Field' },
+        { field: 'type', title: 'Type' },
+        { field: 'default', title: 'Default Component' },
+        { field: 'description', title: 'Description' }
+    ]}
+    data={[
+        {
+        field: 'Action',
+        type: "(props) => 'React.Element'",
+        default: 'MTableAction',
+        description: 'Action component'
+        },
+        {
+        field: 'Actions',
+        type: "(props) => 'React.Element'",
+        default: 'MTableActions',
+        description: 'Actions component'
+        },
+        {
+        field: 'Body',
+        type: "(props) => 'React.Element'",
+        default: 'MTableBody',
+        description: 'Body component'
+        },
+        {
+        field: 'Cell',
+        type: "(props) => 'React.Element'",
+        default: 'MTableCell',
+        description: 'Cell component'
+        },
+        {
+        field: 'Container',
+        type: "(props) => 'React.Element'",
+        default: 'Paper',
+        description: 'Container that everything renders in'
+        },
+        {
+        field: 'EditField',
+        type: "(props) => 'React.Element'",
+        default: 'MTableEditField',
+        description: 'EditField component'
+        },
+        {
+        field: 'EditRow',
+        type: "(props) => 'React.Element'",
+        default: 'MTableEditRow',
+        description: 'EditRow component'
+        },
+        {
+        field: 'FilterRow',
+        type: "(props) => 'React.Element'",
+        default: 'MTableFilterRow',
+        description: 'FilterRow component'
+        },
+        {
+        field: 'Groupbar',
+        type: "(props) => 'React.Element'",
+        default: 'MTableGroupbar',
+        description: 'FilterRow component'
+        },
+        {
+        field: 'Header',
+        type: "(props) => 'React.Element'",
+        default: 'MTableHeader',
+        description: 'Header component'
+        },
+        {
+        field: 'OverlayLoading',
+        type: "(props) => 'React.Element'",
+        default: 'CircularProgress',
+        description: 'Overlay loading component'
+        },
+        {
+        field: 'Pagination',
+        type: "(props) => 'React.Element'",
+        default: 'MTablePagination',
+        description: 'Pagination component'
+        },
+        {
+        field: 'Row',
+        type: "(props) => 'React.Element'",
+        default: 'MTableBodyRow',
+        description: 'Row component'
+        },
+        {
+        field: 'Toolbar',
+        type: "(props) => 'React.Element'",
+        default: 'MTableToolbar',
+        description: 'Toolbar component'
+        }
+    ]}
+    />
+</div>
+
+## Callback Function
+
+more on `Toolbar: props => {}` (the props object)

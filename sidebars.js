@@ -3,6 +3,7 @@ module.exports = {
     'Getting Started': [
       'getting-started/about',
       'getting-started/install',
+      'getting-started/instance',
     ],
     Features: [
       "highlights/highlight_actions",
@@ -22,7 +23,6 @@ module.exports = {
       "highlights/highlight_tree_data",
     ],
     API: [
-      // "api/material_table",
       {
         "Props": [
           'api/props/mt_prop_actions',
@@ -66,7 +66,11 @@ module.exports = {
           'api/components/component_m_table_stepped-pagination',
           'api/components/component_m_table_toolbar',
         ],
+        "In Depth": [
+          "api/in-depth/details_component_overriding"
+        ],
       },
     ],
+
   },
 };

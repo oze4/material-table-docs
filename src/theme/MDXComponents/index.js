@@ -10,7 +10,9 @@ import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
 
-import MaterialTable, { MTableBodyRow } from "material-table";
+import MaterialTable from "material-table";
+
+import { Chip } from '@material-ui/core';
 
 import { 
   RemoveCircleOutlineOutlined as RemoveCircleIcon,
@@ -21,7 +23,7 @@ import styles from './styles.module.css';
 
 const SCOPE = {
   MaterialTable,
-  MTableBodyRow,
+  Chip,
   RemoveCircleIcon,
   AccountCircleIcon,
 }
@@ -32,7 +34,7 @@ export default {
     if (typeof children === 'string') {
 
       //-------------------------------------------------------/
-      return <CodeBlock {...props} scope={SCOPE} />;
+      return <CodeBlock {...props} scope={SCOPE} style={{ fontSize: '1.2rem' }} />;
       /** 
        * REPLACED THE LINE BELOW WITH THE LINE ABOVE 
        */

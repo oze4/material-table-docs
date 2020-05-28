@@ -8,7 +8,8 @@
 .mdxCodeBlock {
   position: relative;
   margin-bottom: var(--ifm-leading);
-  font-size: var(--ifm-code-font-size);
+  /* font-size: var(--ifm-code-font-size); */
+  font-size: 0.75rem !important;
 }
 
 .mdxCodeBlock pre {

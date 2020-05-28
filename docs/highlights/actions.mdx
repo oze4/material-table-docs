@@ -3,7 +3,6 @@ id: highlight_actions
 title: Actions
 ---
 
-import LiveCodeBlock from '../../components/LiveCodeBlock.jsx';
 import MaterialTable from 'material-table';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,10 +16,10 @@ import { Button } from '@material-ui/core';
   to={useBaseUrl('docs/api/props/mt_prop_actions')} 
   disableElevation
 >
-  API Docs
+  More Info
 </Button>
 
-:::info Summary
+:::note Important Info
 You can add buttons to rows or toolbar by using actions prop. Actions prop takes array of actions.
 
 Actions are buttons that are located either within the toolbar (to perform table-wide tasks, like export to .csv), or as the first column in each row (to perform row tasks, like edit data in a row).
@@ -30,7 +29,7 @@ Actions are rendered to either the Toolbar, or to the start of each Row.
 By default, Actions will be rendered to the start of each Row.
 :::
 
-:::warning Trying to use conditional Actions with Selection?
+:::info Trying to use conditional Actions with Selection?
 See [here](#conditional-action--selection) for more info
 :::
 
@@ -325,9 +324,6 @@ function IsFreeAction() {
   ];
   return (
     <MaterialTable
-      options={{
-        actionsColumnIndex: -1
-      }}
       data={data}
       columns={columns}
       title="Is Free Action"

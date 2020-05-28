@@ -3,7 +3,11 @@ id: install
 title: Installation
 ---
 
-#### yarn
+## Semantic Versioning
+
+Material Table follows Semantic Versioning in all its official projects for documented features and behavior.
+
+## yarn
 
 ```javascript
 // prerequisites
@@ -12,7 +16,7 @@ yarn add @material-ui/core @material-ui/icons
 yarn add material-table
 ```
 
-#### npm
+## npm
 
 ```javascript
 // prerequisites

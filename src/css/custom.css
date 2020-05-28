@@ -27,7 +27,7 @@ body {
 
   --ifm-color-secondary: #e8eaf5;
 
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 85%;
 
   --ifm-background-color: var(--ifm-color-secondary);
   --ifm-background-surface-color: var(--ifm-color-secondary);
