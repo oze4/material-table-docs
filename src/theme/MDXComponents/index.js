@@ -10,7 +10,7 @@ import Link from '@docusaurus/Link';
 import CodeBlock from '@theme/CodeBlock';
 import Heading from '@theme/Heading';
 
-import MaterialTable from "material-table";
+import MaterialTable, { MTableBodyRow, MTableToolbar } from "material-table";
 
 import { Chip } from '@material-ui/core';
 
@@ -23,6 +23,8 @@ import styles from './styles.module.css';
 
 const SCOPE = {
   MaterialTable,
+  MTableBodyRow,
+  MTableToolbar,
   Chip,
   RemoveCircleIcon,
   AccountCircleIcon,

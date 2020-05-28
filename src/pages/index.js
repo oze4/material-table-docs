@@ -74,25 +74,11 @@ function Home() {
       html = document.querySelector('html');
       html.classList.add('homepage-background-styles');
     }
-
     return () => html.classList.remove('homepage-background-styles');
   });
 
-  let _input = `
-# This is a header\n\nAnd this is a paragraph
-\r\n`;
-
-  _input += "```\r\n";
-  _input += 'function A(){\r\n';
-  _input += '  console.log("Hi");\r\n';
-  _input += '}\r\n';
-  _input += '```';
-
   return (
-    <Layout
-      // title={`${siteConfig.title}`}
-      description="React datatable based on Material-UI"
-    >
+    <Layout description="React datatable based on Material-UI">
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
@@ -115,18 +101,12 @@ function Home() {
         <Grid
           container
           direction="row"
+          justify="center"
           className={classnames(styles.featuresContainer)}
           style={{ height: featuresContainerHeight }}
         >
           <Grid item xs={12} md={6}>
-            <Grid container direction="row" className={classes.codeContainer}>
-              <Grid item xs={12}>
-                <Highlighter code={code_} language="shell" theme={dracula} />
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <ReactMarkdown source={_input} />
+            <Highlighter code={code_} language="shell" theme={dracula} />
           </Grid>
         </Grid>
       </main>
