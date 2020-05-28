@@ -8,6 +8,8 @@
 
 A simple and powerful Datatable for React based on [Material-UI Table](https://material-ui.com/api/table/) with some additional features.
 
+</div>
+
 ## Intro
 
 This site is built using [Docusaurus 2](https://v2.docusaurus.io/)
