@@ -1,6 +1,16 @@
-# Website
+<p align="center" style="box-shadow: 2px 2px;">
+  <a href="https://oze4.github.io/material-table-docs/" rel="noopener" target="_blank" ><img width="200" src="https://raw.githubusercontent.com/mbrn/material-table.com/master/docs/assets/logo-back.png" alt="material-table"></a></p>
+</p>
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+<h1 align="center">material-table</h1>
+
+<div align="center">
+
+A simple and powerful Datatable for React based on [Material-UI Table](https://material-ui.com/api/table/) with some additional features.
+
+## Intro
+
+This site is built using [Docusaurus 2](https://v2.docusaurus.io/)
 
 ### Installation
 
